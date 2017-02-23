@@ -1,5 +1,7 @@
 # TranslitKit
 
+[![Code Climate](https://codeclimate.com/github/AnalyzePlatypus/TranslitKit/badges/gpa.svg)](https://codeclimate.com/github/AnalyzePlatypus/TranslitKit)
+
 *TranslitKit* is a framework for Hebrew-English transliteration.
 
 Example:
