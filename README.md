@@ -32,11 +32,8 @@ word.t(:long)
 
 The default is `:short`:
 ```ruby
-  word.t
-  # => ["avroom", "avroam", "avroem", "avrohom", "avroham",
-  # "avrohem", "avraom", "avraam", "avraem", "avrahom",
-  # "avraham", "avrahem", "avreom", "avream", "avreem",
-  # "avrehom", "avreham", "avrehem"]
+  word.t == word.t(:short)
+  # => true
 ```
 To get the total permutation count, call `HebrewWord#inspect`
 ```ruby
@@ -45,6 +42,7 @@ word.inspect
 ```
 
 ## Adding Custom Phoneme maps
+###### Format
 _Phoneme Maps_ are simply JSON files, placed in the `lib/resources` directory.
 
 The file should map between each `String` (the phonemes) and an `Array`s of replacement characters.
@@ -58,8 +56,7 @@ The file should map between each `String` (the phonemes) and an `Array`s of repl
 
 A _phoneme_ can be a Hebrew character `א`, _nekuda_ (`ָ`), or character with modifiers, such as a _dagesh_ (`בּ`). Keep in mind that many characters will be normalized (see below).
 
-### Using Custom Phoneme maps
-
+###### Installation
 To install your custom map, place the file in `lib/resources`
 
 Your file will be available as the symbol`:<filename>` without the `.json` extension.
@@ -76,7 +73,7 @@ At present, your map will not display results in `HebrewWord#inspect`
 When a word is transliterated, it is pre-processed to normalize certain characters.
 Specifically:
 * Whitespace is stripped
-* Final letters are normalized to standard ones      `[םןךףץ]`
-* _CHATAF_ _nekudos_ are normalized to standard ones `['ֲ','ֳ','ֱ']`
+* The final letters `[םןךףץ]` are normalized to their standard forms 
+* _CHATAF_ _nekudos_ `['ֲ','ֳ','ֱ']` are normalized to their standard forms
 * Full _CHIRIK_, _TZEIREI_, and _CHOLOM_ _nekudos_ have their letters removed
 * _DAGESH_ characters are removed from all but the characters `[בוכפת]`
