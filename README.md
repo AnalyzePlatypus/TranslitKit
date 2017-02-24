@@ -1,5 +1,6 @@
 # TranslitKit
 
+[![Build Status](https://travis-ci.org/AnalyzePlatypus/TranslitKit.svg?branch=master)](https://travis-ci.org/AnalyzePlatypus/TranslitKit)
 [![Code Climate](https://codeclimate.com/github/AnalyzePlatypus/TranslitKit/badges/gpa.svg)](https://codeclimate.com/github/AnalyzePlatypus/TranslitKit)
 
 *TranslitKit* is a framework for Hebrew-English transliteration.
@@ -62,6 +63,8 @@ A _phoneme_ can be a Hebrew character `א`, _nekuda_ (`ָ`), or character with m
 To install your custom map, place the file in `lib/resources`
 
 Your file will be available as the symbol`:<filename>` without the `.json` extension.
+
+Example: `klingon.json` becomes `:klingon`
 
 Now you can use it anywhere:
 ```ruby
