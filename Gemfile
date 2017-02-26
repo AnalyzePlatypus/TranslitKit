@@ -10,9 +10,4 @@ gemspec
 # Git. Remember to move these dependencies to your gemspec before releasing
 # your gem to rubygems.org.
 
-# To use a debugger
-=begin
- gem 'byebug', group: [:development, :test]
- gem 'pry', group: [:development, :test]
- gem 'pry-nav', group: [:development, :test]
-=end
+gem 'coveralls', require: false
