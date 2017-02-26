@@ -2,6 +2,7 @@
 
 [![Build Status](https://travis-ci.org/AnalyzePlatypus/TranslitKit.svg?branch=master)](https://travis-ci.org/AnalyzePlatypus/TranslitKit)
 [![Code Climate](https://codeclimate.com/github/AnalyzePlatypus/TranslitKit/badges/gpa.svg)](https://codeclimate.com/github/AnalyzePlatypus/TranslitKit)
+[![Coverage Status](https://coveralls.io/repos/github/AnalyzePlatypus/TranslitKit/badge.svg?branch=master)](https://coveralls.io/github/AnalyzePlatypus/TranslitKit?branch=master)
 
 *TranslitKit* is a framework for Hebrew-English transliteration.
 

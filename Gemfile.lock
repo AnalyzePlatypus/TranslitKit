@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    string_pipeline (0.5)
+    translit_kit (0.6)
       rails (~> 4.2.6)
 
 GEM
@@ -107,7 +107,7 @@ PLATFORMS
 
 DEPENDENCIES
   sqlite3
-  string_pipeline!
+  translit_kit!
 
 BUNDLED WITH
    1.13.7

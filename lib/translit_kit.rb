@@ -4,7 +4,7 @@
 =end
 require "string_transformer"
 
-module StringPipeline
+module TranslitKit
   class StringPipeline
 
     attr_accessor :modules
@@ -23,7 +23,7 @@ module StringPipeline
         invert_case: StringTransformer.new(:invert_case),
         print:       StringTransformer.new(:print),
 
-        
+
 =begin
         In development:
 
