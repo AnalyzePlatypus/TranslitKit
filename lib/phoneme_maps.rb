@@ -51,7 +51,7 @@ private
 
       JSON.parse text
     rescue Errno::ENOENT
-      raise "Unknown list name. Could not find file `#{location[(location.rindex('/') + 1)..location.length]}` in directory `#{location[0..location.rindex('/')]}`.\nIs the file name spelled correctly, or altered somewhere in your code?"
+      raise "Unknown list name. Could not find file `#{location[(location.rindex('/') + 1)..location.length]}` in directory `#{__FILE__}/#{location[0..location.rindex('/')]}`.\nIs the file name spelled correctly, or altered somewhere in your code?"
     rescue JSON::ParserError
       raise "JSON file `#{location}` is not formatted properly.\nTry validating it at JSONlint.com (Look out for missing braces and missing/extra commas)"
     end
