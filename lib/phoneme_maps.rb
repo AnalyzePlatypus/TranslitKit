@@ -22,7 +22,7 @@
 
 require 'json'
 
-FILE_DIRECTORY  = "lib/resources/"
+FILE_DIRECTORY  = File.expand_path("lib/resources/")
 
 class PhonemeMaps
 
@@ -30,7 +30,7 @@ class PhonemeMaps
 # And attempts to load its contents
 # Returns a Hash
 def load symbol
-  load_file "#{FILE_DIRECTORY}#{symbol.to_s}.json"
+  load_file "#{FILE_DIRECTORY}/#{symbol.to_s}.json"
 end
 
 def directory
@@ -44,16 +44,19 @@ private
   # Returns a hash
   def load_file location
     begin
-      f = File.open location, 'r'
-      text = ""
-
-      f.each_line {|line| text << line }
-
-      JSON.parse text
+      File.open location, 'r' do |f|
+        text = ""
+        f.each_line {|line| text << line }
+        @contents = JSON.parse text
+      end
     rescue Errno::ENOENT
-      raise "Unknown list name. Could not find file `#{location[(location.rindex('/') + 1)..location.length]}` in directory `#{__FILE__}/#{location[0..location.rindex('/')]}`.\nIs the file name spelled correctly, or altered somewhere in your code?"
+      raise "Unknown list name. Could not find file `#{location[(location.rindex('/') + 1)..location.length]}` in directory `#{location[0..location.rindex('/')]}`.\n
+             Is the file name spelled correctly, or altered somewhere in your code?\n
+             Contents of directory:
+             #{Dir.new(location[0..location.rindex('/')]).entries}"
     rescue JSON::ParserError
       raise "JSON file `#{location}` is not formatted properly.\nTry validating it at JSONlint.com (Look out for missing braces and missing/extra commas)"
     end
+    @contents
   end
 end
