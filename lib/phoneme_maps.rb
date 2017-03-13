@@ -22,7 +22,8 @@
 
 require 'json'
 
-FILE_DIRECTORY  = File.expand_path("lib/resources/")
+lib_directory = File.dirname(__FILE__)
+FILE_DIRECTORY  = "#{lib_directory}/resources"
 
 class PhonemeMaps
 
