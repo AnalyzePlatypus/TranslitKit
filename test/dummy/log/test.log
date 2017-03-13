@@ -68447,3 +68447,253 @@ HebrewArrayTest: test_should_transliterate_single_word
 HebrewArrayTest: test_should_transliterate_many_words
 -----------------------------------------------------
   [1m[35m (0.0ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+-----------------------------------------------------
+HebrewArrayTest: test_should_transliterate_many_words
+-----------------------------------------------------
+  [1m[35m (0.1ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+---------------------------------------
+HebrewArrayTest: test_should_init_empty
+---------------------------------------
+  [1m[35m (0.0ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+------------------------------------------------------
+HebrewArrayTest: test_should_transliterate_single_word
+------------------------------------------------------
+  [1m[35m (0.0ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+-------------------------------------------------------------------------
+TransliteratorTest: test_should_transliterate_with_stored_list_by_default
+-------------------------------------------------------------------------
+  [1m[35m (0.0ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+-------------------------------------------------------------------------------------------------
+TransliteratorTest: test_should_remember_the_list_selected_during_init_even_after_transliteration
+-------------------------------------------------------------------------------------------------
+  [1m[35m (0.0ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+--------------------------------------------------------------------------------------
+TransliteratorTest: test_should_use_supplied_list_when_list_supplied_in_#transliterate
+--------------------------------------------------------------------------------------
+  [1m[35m (0.0ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+--------------------------------------------------------------
+TransliteratorTest: test_should_select_'short'_list_by_default
+--------------------------------------------------------------
+  [1m[35m (0.0ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+-------------------------------------------------------
+TransliteratorTest: test_should_init_without_blowing_up
+-------------------------------------------------------
+  [1m[35m (0.0ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+--------------------------------------------------------
+TransliteratorTest: test_should_not_change_supplied_test
+--------------------------------------------------------
+  [1m[35m (0.1ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+-------------------------------------------------------------------
+TransliteratorTest: test_should_remember_the_list_named_during_init
+-------------------------------------------------------------------
+  [1m[35m (0.0ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+--------------------------------------------------------
+TransliteratorTest: test_should_change_list_when_told_to
+--------------------------------------------------------
+  [1m[35m (0.0ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+--------------------------------------------------------
+TransliteratorTest: test_should_require_a_string_on_init
+--------------------------------------------------------
+  [1m[35m (0.0ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+-----------------------------------------------------------
+TransliteratorTest: test_should_fail_if_bad_list_name_given
+-----------------------------------------------------------
+  [1m[35m (0.0ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+-------------------------------------------------------
+TransliteratorTest: test_should_correctly_find_phonemes
+-------------------------------------------------------
+  [1m[35m (0.0ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+-----------------------------------------------------------
+PhonemeMapsTest: test_should_reject_unknown_file_list_names
+-----------------------------------------------------------
+  [1m[35m (0.0ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+-----------------------------------------------------------------------
+PhonemeMapsTest: test_should_load_files_in_directory_without_blowing_up
+-----------------------------------------------------------------------
+  [1m[35m (0.0ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+---------------------------------------------------------------------
+PermuterTest: test_should_produce_all_permutations_for_integer_arrays
+---------------------------------------------------------------------
+  [1m[35m (0.0ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+----------------------------------------------------------
+PermuterTest: test_should_remove_arrays_from_internal_list
+----------------------------------------------------------
+  [1m[35m (0.0ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+-----------------------------------------------------------------
+PermuterTest: test_should_produce_permutations_for_Hebrew_letters
+-----------------------------------------------------------------
+  [1m[35m (0.0ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+-----------------------------------------------------
+PermuterTest: test_should_add_arrays_to_internal_list
+-----------------------------------------------------
+  [1m[35m (0.0ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+----------------------------------------------------------------
+PermuterTest: test_should_produce_permutations_for_Latin_letters
+----------------------------------------------------------------
+  [1m[35m (0.0ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+------------------------------------------------------
+PermuterTest: test_should_return_[]_if_no_arrays_added
+------------------------------------------------------
+  [1m[35m (0.0ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+----------------------------------------------------------------------------------
+PermuterTest: test_should_produce_single_permutation_if_arrays_have_only_one_entry
+----------------------------------------------------------------------------------
+  [1m[35m (0.0ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+-----------------------------------------------------
+HebrewWordTest: test_correctly_stores_the_hebrew_word
+-----------------------------------------------------
+  [1m[35m (0.0ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+------------------------------------------------
+HebrewWordTest: test_should_transliterate_a_word
+------------------------------------------------
+  [1m[35m (0.0ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+------------------------------------------------------------
+HebrewWordTest: test_should_reject_unknown_phoneme_map_names
+------------------------------------------------------------
+  [1m[35m (0.0ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+---------------------------------------------------
+PhonemizerTest: test_should_normalize_final_letters
+---------------------------------------------------
+  [1m[35m (0.1ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+------------------------------------------------------------
+PhonemizerTest: test_should_pass_normal_characters_unchanged
+------------------------------------------------------------
+  [1m[35m (0.0ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+-----------------------------------------------------------------
+PhonemizerTest: test_should_not_separate_a_DAGESH_from_its_letter
+-----------------------------------------------------------------
+  [1m[35m (0.0ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+----------------------------------------------------------------
+PhonemizerTest: test_should_normalize_a_full_chirik_(_אִי_–>_אִ)
+----------------------------------------------------------------
+  [1m[35m (0.0ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+---------------------------------------------------------------------
+PhonemizerTest: test_should_move_DAGESH_even_when_proceeded_by_nekuda
+---------------------------------------------------------------------
+  [1m[35m (0.0ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+-----------------------------------------------------------
+PhonemizerTest: test_should_pass_standard_nekudos_unchanged
+-----------------------------------------------------------
+  [1m[35m (0.0ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+----------------------------------------------
+PhonemizerTest: test_should_move_DAGESH_to_VAV
+----------------------------------------------
+  [1m[35m (0.0ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+--------------------------------------------------------------------------
+PhonemizerTest: test_should_move_DAGESH_even_when_proceeded_by_SHIN_(_שׁ_)
+--------------------------------------------------------------------------
+  [1m[35m (0.0ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+----------------------------------------------------
+PhonemizerTest: test_should_normalize_CHATAF_nekudos
+----------------------------------------------------
+  [1m[35m (0.0ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+---------------------------------------------------------
+PhonemizerTest: test_should_move_DAGESH_to_correct_letter
+---------------------------------------------------------
+  [1m[35m (0.0ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+------------------------------------------------------------------
+PhonemizerTest: test_should_normalize_a_full_TZEIREI_(_אֵי_–>_אֵ_)
+------------------------------------------------------------------
+  [1m[35m (0.0ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+-----------------------------------------------------------------
+PhonemizerTest: test_should_not_separate_a_shin_and_its_dot_(שׁ)_
+-----------------------------------------------------------------
+  [1m[35m (0.1ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+--------------------------------------------------------
+PhonemizerTest: test_should_seperate_letters_and_nekudos
+--------------------------------------------------------
+  [1m[35m (0.0ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+--------------------------------------------
+PhonemizerTest: test_should_seperate_letters
+--------------------------------------------
+  [1m[35m (0.0ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+----------------------------------------------------
+PhonemizerTest: test_should_break_word_into_phonemes
+----------------------------------------------------
+  [1m[35m (0.0ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+------------------------------------------------------------------------------------------
+PhonemizerTest: test_should_not_separate_a_DAGESH_from_its_letter_even_separated_by_nekuda
+------------------------------------------------------------------------------------------
+  [1m[35m (0.0ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+--------------------------------------------------------------------
+PhonemizerTest: test_should_move_DAGESH_even_when_followed_by_nekuda
+--------------------------------------------------------------------
+  [1m[35m (0.0ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+--------------------------------------------------------------------------------------
+PhonemizerTest: test_should_not_seperate_a_CHES_and_PATACH_when_they_end_the_word_(חַ)
+--------------------------------------------------------------------------------------
+  [1m[35m (0.0ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+---------------------------------------------------------------------------------------
+PhonemizerTest: test_should_correctly_identify_the_previous_letter_in_raw_hebrew_string
+---------------------------------------------------------------------------------------
+  [1m[35m (0.0ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+------------------------------------------------------------------
+PhonemizerTest: test_should_correctly_identify_the_previous_letter
+------------------------------------------------------------------
+  [1m[35m (0.0ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+----------------------------------------
+PhonemizerTest: test_should_strip_spaces
+----------------------------------------
+  [1m[35m (0.0ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+----------------------------------------------------------------
+PhonemizerTest: test_should_strip_DAGESH_from_unchanging_letters
+----------------------------------------------------------------
+  [1m[35m (0.0ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+-----------------------------------------------------
+PhonemizerTest: test_correctly_stores_the_hebrew_word
+-----------------------------------------------------
+  [1m[35m (0.0ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+---------------------------------------------------------------
+PhonemizerTest: test_should_normalize_a_full_CHOLOM_(_וֹ_–>_ֹ_)
+---------------------------------------------------------------
+  [1m[35m (0.0ms)[0m  rollback transaction
