@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    translit_kit (0.6.2)
+    translit_kit (0.6.3)
       rails (~> 4.2.6)
 
 GEM
@@ -65,7 +65,7 @@ GEM
     mime-types-data (3.2016.0521)
     mini_portile2 (2.1.0)
     minitest (5.10.1)
-    nokogiri (1.7.0.1)
+    nokogiri (1.7.1)
       mini_portile2 (~> 2.1.0)
     rack (1.6.5)
     rack-test (0.6.3)
@@ -113,7 +113,7 @@ GEM
     thor (0.19.4)
     thread_safe (0.3.6)
     tins (1.13.2)
-    tzinfo (1.2.2)
+    tzinfo (1.2.3)
       thread_safe (~> 0.1)
 
 PLATFORMS
