@@ -5,7 +5,7 @@ class PhonemizerTest < ActiveSupport::TestCase
 
   # STORAGE
 
-  test "correctly stores the hebrew word" do
+  test"correctly stores the hebrew word" do
     @phon = Phonemizer.new "שׁבּת"
     assert_equal @phon.raw, "שׁבּת"
   end
@@ -49,15 +49,35 @@ class PhonemizerTest < ActiveSupport::TestCase
 
   # Normalize exotic characters
 
+  # Final Letters
   test "should normalize final letters" do
     @phon = Phonemizer.new "םןץףך"
     assert_equal ["מ", "נ", "צ", "פ", "כ"], @phon.phonemes
   end
 
+  test "should raise an error when final-letter normalizer is given a standard letter" do
+    @phon = Phonemizer.new ''
+    "אבגדהוזחטיכלמנסעפקרשתצ".split('').each do |letter|
+      assert_raises (RuntimeError) {@phon.send :normalize_final_letter, letter}
+    end
+  end
+
+
+  # CHATAF nekudos
+
   test "should normalize CHATAF nekudos" do
     @phon = Phonemizer.new " ֲ ֳ ֱ"
     assert_equal ["ַ", "ָ", "ֶ"], @phon.phonemes
   end
+
+  test "should raise an error when the CHATAF-nekuda normalizer is given a standard nekuda" do
+    @phon = Phonemizer.new ''
+    ["ְ", "ֶ", "ֻ", "ָ", "ַ", "ֵ", "ִ"].each do |nekuda|
+      assert_raises (RuntimeError) {@phon.send :deCHATAFize, nekuda}
+    end
+  end
+
+  # 'Full' nekudos
 
   test "should normalize a full chirik ( אִי –> אִ)" do
     @phon = Phonemizer.new "אִי"
@@ -132,6 +152,11 @@ class PhonemizerTest < ActiveSupport::TestCase
     assert_equal ["א", "וּ"], @phon.phonemes
   end
 
+  test "should raise error if DAGESH has no preceding letter (Orphaned DAGESH)" do
+    @phon = Phonemizer.new 'ּ'
+    assert_raises (RuntimeError) { @phon.phonemes }
+  end
+
   # ==========================
   # The internal index-finding helper method
 
@@ -157,6 +182,7 @@ class PhonemizerTest < ActiveSupport::TestCase
     assert_equal 0, @phon.send(:previous_letter_index, 1, word)
     assert_equal 0, @phon.send(:previous_letter_index, 0, word)
   end
+
 
   test "should correctly identify the previous letter" do
     @phon = Phonemizer.new ""

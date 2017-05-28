@@ -1,6 +1,6 @@
 source 'https://rubygems.org'
 
-# Declare your gem's dependencies in string_pipeline.gemspec.
+# Declare your gem's dependencies in translitkit.gemspec.
 # Bundler will treat runtime dependencies like base dependencies, and
 # development dependencies will be added by default to the :development group.
 gemspec
@@ -10,4 +10,5 @@ gemspec
 # Git. Remember to move these dependencies to your gemspec before releasing
 # your gem to rubygems.org.
 
-gem 'coveralls', require: false
+# gem 'coveralls', require: false
+gem 'simplecov', require: false

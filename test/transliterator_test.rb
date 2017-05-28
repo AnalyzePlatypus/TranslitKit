@@ -7,7 +7,7 @@ class TransliteratorTest < ActiveSupport::TestCase
   end
 
   test "should init without blowing up" do
-    assert_nothing_raised {Transliterator.new "תְּשׁוּבָה"}
+    assert_nothing_raised { Transliterator.new "תְּשׁוּבָה"}
   end
 
   test "should not change supplied test" do

@@ -1,3 +1,7 @@
+# Coverage Analysis
+require 'simplecov'
+SimpleCov.start
+
 # Configure Rails Environment
 ENV["RAILS_ENV"] = "test"
 
@@ -7,8 +11,9 @@ ActiveRecord::Migrator.migrations_paths = [File.expand_path("../../test/dummy/db
 require "rails/test_help"
 
 # Enable Coveralls test coverage tester
-require 'coveralls'
-Coveralls.wear!
+# require 'coveralls'
+# Coveralls.wear!
+
 # Filter out Minitest backtrace while allowing backtrace from other libraries
 # to be shown.
 Minitest.backtrace_filter = Minitest::BacktraceFilter.new
