@@ -24,4 +24,19 @@ class HebrewWordTest < ActiveSupport::TestCase
     @heb = HebrewWord.new "אַברָהָם"
     assert_raises(RuntimeError) { @heb.transliterate(:blah) }
   end
+
+  test "`phonemes` is delegated to the Phonemizer class" do
+    @heb = HebrewWord.new "אַברָהָם"
+    assert_equal @heb.phonemes, Phonemizer.new(@heb.raw).phonemes
+  end
+
+  test "method `t` alias for `transliterate`" do
+    @heb = HebrewWord.new "אַברָהָם"
+    assert_equal @heb.transliterate(:single), @heb.t(:single)
+  end
+
+  test "`inspect` function outputs correct translit counts" do
+    @heb = HebrewWord.new "אַברָהָם"
+    assert_equal @heb.inspect, "אַברָהָם: Permutations: #{@heb.transliterate(:single).length} single | #{@heb.transliterate(:short).length} short | #{@heb.transliterate(:long).length} long"
+  end
 end

@@ -10,5 +10,5 @@ gemspec
 # Git. Remember to move these dependencies to your gemspec before releasing
 # your gem to rubygems.org.
 
-# gem 'coveralls', require: false
+gem 'coveralls', require: false
 gem 'simplecov', require: false
