@@ -1,8 +1,15 @@
 =begin
   HebrewWord.rb
 
-  Wraps a Hebrew word and provides:
-    * calculating transliterations
+  Wraps a Hebrew word.
+
+  Methods:
+    * raw -> returns the original word
+    * phonemes -> Returns an Array of phonemes (see Class::Phonemizer)
+    * transliterate(list_name) -> Returns as Array of transliterated strings
+    * t -> Alias for `transliterate`
+    * to_s -> Alias to `raw`
+    * inspect -> Returns an informative string of the original Hebrew, and the available translit counts
 
 =end
 
@@ -14,7 +21,6 @@ class HebrewWord < String
 
   # Initializer
   # Expects a Unicode Hebrew word (i.e. "עַקֵדָה")
-  # and a optional phoneme-mapping list
   def initialize string
     @hebword = string
   end

@@ -1,122 +1,90 @@
-# How Transliteration Works
+# TranslitKit
 
-LectureLab uses a pile of helper classes to ease mass-editing strings
-
-## The HebrewWord class
-
-`HebrewWord` takes a a Hebrew word (with _nikkud_) and a _phoneme list_, which maps Hebrew phonemes (letters with optional modifiers) unto English characters.
-(If phonemes are not supplied, it loads a default set. See the implementation)
+*TranslitKit* is a framework for Hebrew-English transliteration.
 
 Example:
 ```ruby
-@phonemes = {"ב" => ["v"], "בּ" => ["b","bb"]}
-h = new HebrewWord "בָּעוֹמֶר", @phonemes
-h.transliterate
-# => ...
+  require 'translit_kit'
+  word = HebrewWord.new "אַברָהָם"
+  word.transliterate(:single)
+  # => ["avrohom"]
+
+  # Shortcut
+  word.t(:single)
+  # => ["avrohom"]
 ```
+Transliteration is powered by _phoneme maps_, files that map between Hebrew _phonemes_, or units of sound, and English characters. (see below)
 
-Let's see the implementation:
-```ruby
-def transliterate list_name = nil
-  Transliterator.new(@hebword, list_name).transliterate
-end
-```
-
-`Hebrew` delegates the actual work to the `Transliterator` class.
-
-## The Transliterator class
-
+Three `phoneme_maps` are provided: `:long`, `:short`, and `:single`.
+You can easily add your own (see below)
 
 ```ruby
-class Transliterator
-  def transliterate
-    @permuter.permutations
-  end
-...
+word.t(:single)
+# => ["avrohom"]
+word.t(:short)
+# => ["avroom", "avroam", "avroem", "avrohom", "avroham",
+# "avrohem", "avraom", "avraam", "avraem", "avrahom",
+# "avraham", "avrahem", "avreom", "avream", "avreem",
+# "avrehom", "avreham", "avrehem" ]
+word.t(:long)
+# => ["avroom", "avrooom", "avroohm", ... ] # 5,997 more!
 ```
 
-In the initializer:
+The default is `:short`:
 ```ruby
-@permuter = Permuter.new
+  word.t
+  # => ["avroom", "avroam", "avroem", "avrohom", "avroham",
+  # "avrohem", "avraom", "avraam", "avraem", "avrahom",
+  # "avraham", "avrahem", "avreom", "avream", "avreem",
+  # "avrehom", "avreham", "avrehem"]
 ```
-
-So HebrewWord delegates the actual permuting to the _Permuter_ class
-
-## The Permuter class
-
-The `Permuter` class is a general purpose object for generating combinations:
+To get the total permutation count, call `HebrewWord#inspect`
 ```ruby
-p = Permuter.new
-3.times { p.add_array [1,2,3] }
-
-
-p.permutations
-# => [1,1,1]
-[1,1,2]
-[1,1,3]
-[1,2,3]
-...
+word.inspect
+# => "אַברָהָם: Permutations: 1 single | 18 short | 6000 long"
 ```
 
-In our case, the arrays are the possible English letters for every Hebrew phoneme:
+## Adding Custom Phoneme maps
+_Phoneme Maps_ are simply JSON files, placed in the `lib/resources` directory.
 
+The file should map between each `String` (the phonemes) and an `Array`s of replacement characters.
+
+```json
+{
+  "ב": ["v"],
+  "בּ": ["b", "bb"]
+}
+```
+
+A _phoneme_ can be a Hebrew character `א`, _nekuda_ (`ָ`), or character with modifiers, such as a _dagesh_ (`בּ`). Keep in mind that many characters will be normalized (see below).
+
+### Using Custom Phoneme maps
+
+To install your custom map, place the file in `lib/resources`
+
+Your file will be available as the symbol`:<filename>` without the `.json` extension.
+
+Now you can use it anywhere:
 ```ruby
-def setup_permuter
-  heb_letters.each do |heb_letter|
-    @permuter.add_array @possible_english_letters[heb_letter]
-  end
-end
-```
-Suppose that:
-
-```ruby
-@possible_english_letters = {"ב" => ["v"], "בּ" => ["b","bb"]}
-@possible_english_letters["בּ"]
-# => "["b","bb"]"`
+  word.transliterate(:klingon)
+  # => (Results)
 ```
 
-If the word contains the letter _'בּ'_, permutations will be generated containing both _'b'_ and _bb_.
+At present, your map will not display results in `HebrewWord#inspect`
 
-###### And how does Permuter work?
-`Permuter` uses a basic recursive strategy to generate the permutations.
+# Contributing
+`TranslitKit` is currently maintained by @AnalyzePlatypus.
+Feel free to drop a pull request if you've any ideas!
+(Admittedly, this is a rather niche tool)
 
-From the implementation
-```ruby
- private
-  # permute (indices)
-  # Recursively generate every permutation of the arrays (Courtesy of Ari Fordsham)
-  #
-  # The classic recursive permutation algorithm:
-  # Imagine picking a combination lock: [0][0][0]
-  # Each cylinder is the index to one of the arrays
-  # On each recursion, we add another cylinder [0], [0][0], [0][0][0]
-  # When we have enough cylinders, we generate the permutation (base case)
-  # and iterate to the next value by dropping a cylinder, [0][0]
-  # iterating the loop in else, and recursing again  [0][0][1]
-  # Simple and elegant
-  def permute indices
-    # Base case
-    if indices.length == @arrays.length
-      build_permutation indices
-    else
-      @arrays[indices.length].each_with_index do |item,i|
-        permute indices.dup << i
-      end
-    end
-  end
-```
 
-## Summary
+## Appendix: Pre-Processing
+When a word is transliterated, it is pre-processed to normalize certain characters.
+Specifically:
+* Whitespace is stripped
+* Final letters are normalized to standard ones      `[םןךףץ]`
+* _CHATAF_ _nekudos_ are normalized to standard ones `['ֲ','ֳ','ֱ']`
+* Full _CHIRIK_, _TZEIREI_, and _CHOLOM_ _nekudos_ have their letters removed
+* _DAGESH_ characters are removed from all but the characters `[בוכפת]`
 
-* Transliteration is performed en masse by the `Transliterator` plugin for `String Pipeline`
-* `Transliterator` wraps the Hebrew plaintext in a `HebrewWord` object.
-* `HebrewWord` uses the generic `Permuter` class to generate every possible permutation.
-
-###### What happens next?
-Once everything is done, the `Transliterator` hands a array of hashes back to the calling `StringPipeline`.
-```ruby
-# => ["<heb for shabbos>": ["shabes","shabb"], "heb for purim": ["purim", "poorim"]]
-```
-
-`StringPipeline` then logs the operation, collects statistics, and forwards the list into the `SynonymFileGenerator`, for generating a new synonym file.
-The file is then installed in the database, and is ready for use.  
+For full details, see `lib/phonimizer.rb`
