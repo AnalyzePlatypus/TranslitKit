@@ -10,7 +10,7 @@ LectureLab uses a pile of helper classes to ease mass-editing strings
 Example:
 ```ruby
 @phonemes = {"ב" => ["v"], "בּ" => ["b","bb"]}
-h = new HebrewWord "בָּעוֹמֶר", @phonemes
+h = new HebrewWord "בָּעוֹמֶר", @phonemes
 h.transliterate
 # => ...
 ```
