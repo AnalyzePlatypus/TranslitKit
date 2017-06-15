@@ -23,7 +23,7 @@ require 'phoneme_maps'
 
 # English and Hebrew Unicode have different space (' ') characters
 ENGLISH_SPACE = [160].pack "U"
-HEBREW_SPACE = [32].pack  "U"
+HEBREW_SPACE = [32].pack "U"
 
 # Edge-case characters
 DAGESH   = "ּ"
@@ -50,6 +50,7 @@ CHATAF       = ['ֲ','ֳ','ֱ']
 DAGESH_WHITELIST = /[בוכפת]/
 
 
+# Breaks a Hebrew string into its discrete phonemes
 class Phonemizer
 
   def initialize word

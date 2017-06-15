@@ -4,10 +4,20 @@
 [![Code Climate](https://codeclimate.com/github/AnalyzePlatypus/TranslitKit/badges/gpa.svg)](https://codeclimate.com/github/AnalyzePlatypus/TranslitKit)
 [![Coverage Status](https://coveralls.io/repos/github/AnalyzePlatypus/TranslitKit/badge.svg?branch=master)](https://coveralls.io/github/AnalyzePlatypus/TranslitKit?branch=master)
 [![Inline docs](http://inch-ci.org/github/AnalyzePlatypus/TranslitKit.svg?branch=master)](http://inch-ci.org/github/AnalyzePlatypus/TranslitKit)
+[![Gem Version](https://badge.fury.io/rb/translit_kit.svg)]
+(https://badge.fury.io/rb/translit_kit)
 
 *TranslitKit* is a framework for Hebrew-English transliteration.
 
-Example:
+## Installation 
+
+`gem install translit_kit` or `gem 'translit_kit'` in your `Gemfile`
+
+Requires Ruby 2.2 or later
+
+## Usage 
+
+Basic transliteration
 ```ruby
   require 'translit_kit'
   word = HebrewWord.new "אַברָהָם"
@@ -18,6 +28,7 @@ Example:
   word.t(:single)
   # => ["avrohom"]
 ```
+
 Transliteration is powered by _phoneme maps_, files that map between Hebrew _phonemes_, or units of sound, and English characters. (see below)
 
 Three `phoneme_maps` are provided: `:long`, `:short`, and `:single`.
