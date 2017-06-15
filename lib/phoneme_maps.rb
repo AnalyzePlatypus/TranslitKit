@@ -23,7 +23,7 @@
 require 'json'
 
 lib_directory = File.dirname(__FILE__)
-FILE_DIRECTORY  = "#{lib_directory}/resources"
+FILE_DIRECTORY  = "#{lib_directory}/phoneme_maps"
 
 class PhonemeMaps
 

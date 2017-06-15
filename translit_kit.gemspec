@@ -9,9 +9,9 @@ Gem::Specification.new do |s|
   s.version     = TranslitKit::VERSION
   s.authors     = ["Michoel Samuels"]
   s.email       = ["k2co3@icloud.com"]
-  s.homepage    = "http://shiurim.online/projects"
-  s.summary     = "A modular architecture for processing text"
-  s.description = "A modular architecture for processing text"
+  s.homepage    = "https://github.com/AnalyzePlatypus/TranslitKit"
+  s.summary     = "Hebrew -> English Transliteration engine"
+  s.description = "A Ruby gem for transliterating Hebrew text (with Niqqud) into English characters"
   s.license     = "MIT"
 
   s.files = Dir["{app,config,db,lib}/**/*", "MIT-LICENSE", "Rakefile", "README.rdoc"]
@@ -19,8 +19,4 @@ Gem::Specification.new do |s|
   s.files += Dir["lib/resources/**/*"]
   s.test_files += Dir["test/**/*"]
 
-
-   s.add_dependency "rails", "~> 4.2.6"
-
-   s.add_development_dependency "sqlite3"
 end

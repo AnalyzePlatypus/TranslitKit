@@ -12,3 +12,5 @@ gemspec
 
 gem 'coveralls', require: false
 gem 'simplecov', require: false
+gem 'rails'
+gem 'sqlite3'
