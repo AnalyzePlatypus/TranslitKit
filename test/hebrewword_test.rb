@@ -1,10 +1,13 @@
 require 'test_helper'
+require 'hebrewword'
+require 'phonemizer'
 
 class HebrewWordTest < ActiveSupport::TestCase
 
   test "correctly stores the hebrew word" do
     @heb = HebrewWord.new "שׁבּת"
     assert_equal @heb.raw, "שׁבּת"
+    assert_equal @heb.to_s, "שׁבּת"
   end
 
 

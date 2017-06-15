@@ -1,3 +1,6 @@
+require 'test_helper'
+require 'phoneme_maps'
+
 class PhonemeMapsTest < ActiveSupport::TestCase
 
   def setup
@@ -19,4 +22,8 @@ class PhonemeMapsTest < ActiveSupport::TestCase
   test "should reject unknown file list names" do
     assert_raises (RuntimeError) {@p.load :pan_galactic_gargle_blaster}
   end
+
+  test "should reject malformed JSON files" do
+    assert_raises (RuntimeError) {@p.validate_json "{'missing_brace': true"}
+  end 
 end

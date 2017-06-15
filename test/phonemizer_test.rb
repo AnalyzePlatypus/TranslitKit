@@ -1,4 +1,5 @@
 require 'test_helper'
+require 'phonemizer'
 
 class PhonemizerTest < ActiveSupport::TestCase
 

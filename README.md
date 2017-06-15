@@ -48,7 +48,7 @@ word.inspect
 
 ## Adding Custom Phoneme maps
 ###### Format
-_Phoneme Maps_ are simply JSON files, placed in the `lib/resources` directory.
+_Phoneme Maps_ are simply JSON files, placed in the `lib/phoneme_maps` directory.
 
 The file should map between each `String` (the phonemes) and an `Array`s of replacement characters.
 

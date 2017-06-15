@@ -1,4 +1,5 @@
 require 'test_helper'
+require 'transliterator'
 
 class TransliteratorTest < ActiveSupport::TestCase
 
@@ -65,5 +66,10 @@ class TransliteratorTest < ActiveSupport::TestCase
     assert_equal :short, t.phoneme_map
 
     assert_equal t.transliterate(:single), ["teshuvoh"]
+  end
+
+  test "`inspect` function outputs correct translit counts" do
+    t = Transliterator.new "אַברָהָם"
+    assert_equal t.inspect, "אַברָהָם: Permutations: #{t.transliterate(:single).length} single | #{t.transliterate(:short).length} short | #{t.transliterate(:long).length} long"
   end
 end
