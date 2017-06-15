@@ -2,17 +2,22 @@
 
 [![Build Status](https://travis-ci.org/AnalyzePlatypus/TranslitKit.svg?branch=master)](https://travis-ci.org/AnalyzePlatypus/TranslitKit)
 [![Code Climate](https://codeclimate.com/github/AnalyzePlatypus/TranslitKit/badges/gpa.svg)](https://codeclimate.com/github/AnalyzePlatypus/TranslitKit)
-[![Coverage Status](https://coveralls.io/repos/github/AnalyzePlatypus/TranslitKit/badge.svg?branch=master)](https://coveralls.io/github/AnalyzePlatypus/TranslitKit?branch=master)
-[![Inline docs](http://inch-ci.org/github/AnalyzePlatypus/TranslitKit.svg?branch=master)](http://inch-ci.org/github/AnalyzePlatypus/TranslitKit)
-[![Gem Version](https://badge.fury.io/rb/translit_kit.svg)]
-(https://badge.fury.io/rb/translit_kit)
+[![Coverage Status](https://coveralls.io/repos/github/AnalyzePlatypus/TranslitKit/badge.svg?branch=master)](https://coveralls.io/repos/github/AnalyzePlatypus/TranslitKit/badge.svg?branch=master)
+[![Inline docs](http://inch-ci.org/github/AnalyzePlatypus/TranslitKit.svg?branch=master)](http://inch-ci.org/github/AnalyzePlatypus/TranslitKit.svg?branch=master)
+[![Gem Version](https://badge.fury.io/rb/translit_kit.svg)](https://badge.fury.io/rb/translit_kit.svg)
+[![license](https://img.shields.io/github/license/mashape/apistatus.svg)](https://img.shields.io/github/license/mashape/apistatus.svg)
 
 *TranslitKit* is a framework for Hebrew-English transliteration.
 
 ## Installation 
 
-`gem install translit_kit` or `gem 'translit_kit'` in your `Gemfile`
-
+```shell
+gem install translit_kit
+```
+```ruby
+# in your Gemfile
+gem 'translit_kit'
+```
 Requires Ruby 2.2 or later
 
 ## Usage 
@@ -86,6 +91,10 @@ Now you can use it anywhere:
 ```
 
 At present, your map will not display results in `HebrewWord#inspect`
+
+## Contributing 
+`TranslitKit` is currently maintained by [@AnalyzePlatypus](https://github.com/AnalyzePlatypus).
+Contributions welcome!
 
 ## Appendix: Pre-Processing
 When a word is transliterated, it is pre-processed to normalize certain characters.
