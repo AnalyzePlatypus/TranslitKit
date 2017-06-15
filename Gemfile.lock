@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    translit_kit (0.7)
+    translit_kit (0.9)
 
 GEM
   remote: https://rubygems.org/

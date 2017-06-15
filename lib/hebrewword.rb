@@ -5,10 +5,10 @@
 
   Methods:
     * raw -> returns the original word
+    * to_s -> Alias to `raw`
     * phonemes -> Returns an Array of phonemes (see Class::Phonemizer)
     * transliterate(list_name) -> Returns as Array of transliterated strings
     * t -> Alias for `transliterate`
-    * to_s -> Alias to `raw`
     * inspect -> Returns an informative string of the original Hebrew, and the available translit counts
 
 =end
@@ -17,7 +17,8 @@ require 'phoneme_maps'
 require 'phonemizer'
 require 'transliterator'
 
-class HebrewWord < String
+# The user-facing transliterator class
+class HebrewWord
 
   # Initializer
   # Expects a Unicode Hebrew word (i.e. "עַקֵדָה")
