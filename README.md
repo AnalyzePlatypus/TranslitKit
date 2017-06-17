@@ -4,8 +4,8 @@
 [![Code Climate](https://codeclimate.com/github/AnalyzePlatypus/TranslitKit/badges/gpa.svg)](https://codeclimate.com/github/AnalyzePlatypus/TranslitKit)
 [![Coverage Status](https://coveralls.io/repos/github/AnalyzePlatypus/TranslitKit/badge.svg?branch=master)](https://coveralls.io/repos/github/AnalyzePlatypus/TranslitKit/badge.svg?branch=master)
 [![Inline docs](http://inch-ci.org/github/AnalyzePlatypus/TranslitKit.svg?branch=master)](http://inch-ci.org/github/AnalyzePlatypus/TranslitKit.svg?branch=master)
-[![Gem Version](https://badge.fury.io/rb/translit_kit.svg)](https://badge.fury.io/rb/translit_kit.svg)
-[![license](https://img.shields.io/github/license/mashape/apistatus.svg)](https://img.shields.io/github/license/mashape/apistatus.svg)
+[![Gem Version](https://badge.fury.io/rb/translit_kit.svg)](https://rubygems.org/gems/translit_kit)
+[![license](https://img.shields.io/github/license/mashape/apistatus.svg)](https://github.com/AnalyzePlatypus/TranslitKit/blob/master/MIT-LICENSE)
 
 *TranslitKit* is a framework for Hebrew-English transliteration.
 
