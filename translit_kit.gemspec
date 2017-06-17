@@ -14,9 +14,10 @@ Gem::Specification.new do |s|
   s.description = "A Ruby gem for transliterating Hebrew text (with Niqqud) into English characters"
   s.license     = "MIT"
 
+  s.required_ruby_version = '>= 2.2'
+
   s.files = Dir["{app,config,db,lib}/**/*", "MIT-LICENSE", "Rakefile", "README.md"]
   s.files += Dir["lib/modules/**/*"]
   s.files += Dir["lib/resources/**/*"]
   s.test_files += Dir["test/**/*"]
-
 end
