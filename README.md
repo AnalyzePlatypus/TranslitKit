@@ -2,7 +2,7 @@
 
 [![Build Status](https://travis-ci.org/AnalyzePlatypus/TranslitKit.svg?branch=master)](https://travis-ci.org/AnalyzePlatypus/TranslitKit)
 [![Code Climate](https://codeclimate.com/github/AnalyzePlatypus/TranslitKit/badges/gpa.svg)](https://codeclimate.com/github/AnalyzePlatypus/TranslitKit)
-[![Coverage Status](https://coveralls.io/repos/github/AnalyzePlatypus/TranslitKit/badge.svg?branch=master)](https://coveralls.io/repos/github/AnalyzePlatypus/TranslitKit/badge.svg?branch=master)
+[![Coverage Status](https://coveralls.io/repos/github/AnalyzePlatypus/TranslitKit/badge.svg?branch=master)](https://coveralls.io/github/AnalyzePlatypus/TranslitKit?branch=master)
 [![Inline docs](http://inch-ci.org/github/AnalyzePlatypus/TranslitKit.svg?branch=master)](http://inch-ci.org/github/AnalyzePlatypus/TranslitKit.svg?branch=master)
 [![Gem Version](https://badge.fury.io/rb/translit_kit.svg)](https://rubygems.org/gems/translit_kit)
 [![license](https://img.shields.io/github/license/mashape/apistatus.svg)](https://github.com/AnalyzePlatypus/TranslitKit/blob/master/MIT-LICENSE)
