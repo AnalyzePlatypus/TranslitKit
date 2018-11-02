@@ -20,7 +20,7 @@ class HebrewWordTest < ActiveSupport::TestCase
 
     @heb = HebrewWord.new "אַברָהָם"
     assert_equal ["avroom", "avroam", "avroem", "avrohom", "avroham", "avrohem", "avraom", "avraam", "avraem", "avrahom", "avraham", "avrahem", "avreom", "avream", "avreem", "avrehom", "avreham", "avrehem"],
-                @heb.transliterate(:short)
+                 @heb.transliterate(:short)
   end
 
   test "should reject unknown phoneme_map names" do
