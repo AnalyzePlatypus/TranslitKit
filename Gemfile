@@ -10,6 +10,8 @@ gemspec
 # Git. Remember to move these dependencies to your gemspec before releasing
 # your gem to rubygems.org.
 
+ruby '~> 2.3.3'
+
 gem 'coveralls', require: false
 gem 'simplecov', require: false
 gem 'rails'
