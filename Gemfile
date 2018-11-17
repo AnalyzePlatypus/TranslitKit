@@ -14,4 +14,5 @@ ruby '~> 2.3.3'
 
 gem 'coveralls', require: false
 gem 'simplecov', require: false
+gem 'rake'
 gem 'rails'
