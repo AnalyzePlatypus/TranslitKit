@@ -1,3 +1,3 @@
 module TranslitKit
-  VERSION = "0.92"
+  VERSION = "1.0"
 end
